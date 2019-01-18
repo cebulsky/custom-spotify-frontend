@@ -7,12 +7,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppMaterialModule } from './app-material.module';
 import { HomeComponent } from './home/home.component';
 import { AlbumsComponent } from './albums/albums.component';
+import { AlbumsListComponent } from './albums/albums-list/albums-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AlbumsComponent
+    AlbumsComponent,
+    AlbumsListComponent
   ],
   imports: [
     BrowserModule,

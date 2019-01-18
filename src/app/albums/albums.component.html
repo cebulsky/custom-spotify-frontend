@@ -1,3 +1,12 @@
-<p>
-  albums works!
-</p>
+<div class="container">
+  <app-albums-list class="col-50">
+  </app-albums-list>
+  <!-- <app-albums-list class="col-50" 
+  [albums]="albums" 
+  (selected)="selectAlbum($event)" 
+  (deleted)="deleteAlbum($event)">
+  </app-albums-list> -->
+
+  <!-- <app-item-detail class="col-50" [item]="currentItem" (saved)="saveItem($event)" (cancelled)="cancel($event)">
+  </app-item-detail> -->
+</div>
