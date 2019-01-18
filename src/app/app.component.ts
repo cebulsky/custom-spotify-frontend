@@ -9,6 +9,6 @@ export class AppComponent {
   title = 'Best Music App';
   links = [
     { path: '/home', icon: 'home', label: 'Home' },
-    { path: '/items', icon: 'list', label: 'Items' }
+    { path: '/albums', icon: 'album', label: 'Albums' }
   ];
 }

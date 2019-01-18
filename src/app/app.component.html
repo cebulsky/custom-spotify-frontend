@@ -2,13 +2,13 @@
   <button (click)="sidenav.toggle()" mat-mini-fab>
     <mat-icon>menu</mat-icon>
   </button>
-  <span>
+  <span class="app-title">
     {{title}}
   </span>
 </mat-toolbar>
 
 <mat-sidenav-container class="app-sidenav">
-  <mat-sidenav #sidenav mode="side">
+  <mat-sidenav #sidenav mode="side" opened>
     <!-- class="app-sidenav" -->
     <!-- <mat-sidenav-content> -->
     <nav>
