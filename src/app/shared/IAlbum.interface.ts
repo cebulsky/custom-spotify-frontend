@@ -1,6 +1,7 @@
 export interface IAlbum {
-    id: number;
+    id: string;
     title: string;
-    description: string;
     imageUrl: string;
+    artist: string;
+    description: string;
 }
