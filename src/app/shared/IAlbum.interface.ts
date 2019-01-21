@@ -1,5 +1,5 @@
 export interface IAlbum {
-    id: string;
+    _id: string;
     title: string;
     imageUrl: string;
     artist: string;

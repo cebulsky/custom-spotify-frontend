@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IAlbum } from '../shared/IAlbum.interface';
+import { AlbumService } from '../shared/album.service';
 
 @Component({
   selector: 'app-albums',
@@ -7,9 +9,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AlbumsComponent implements OnInit {
 
-  constructor() { }
+  albums: IAlbum[];
+  currentAlbum: IAlbum;
+
+  constructor(private albumService: AlbumService) { }
 
   ngOnInit() {
+    this.getAlbums();
+  }
+
+  getAlbums() {
+    this.albumService.getAll().subscribe(albums => {
+      this.albums = albums;
+    })
+  }
+
+  selectAlbum(album) {
+    this.currentAlbum = album;
+  }
+
+  deleteAlbum(album) {
+    this.albumService.delete(album)
+      .subscribe(response => {
+        this.getAlbums();
+        this.resetCurrentAlbum();
+      });
+  }
+
+  resetCurrentAlbum(): any {
+    this.currentAlbum = { _id: null, title: '', artist: '', imageUrl: '', description: '' };
   }
 
 }

@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { IAlbum } from 'src/app/shared/IAlbum.interface';
-import { AlbumService } from 'src/app/shared/album.service';
 
 @Component({
   selector: 'app-albums-list',
@@ -8,17 +7,13 @@ import { AlbumService } from 'src/app/shared/album.service';
   styleUrls: ['./albums-list.component.scss']
 })
 export class AlbumsListComponent implements OnInit {
+  @Input() albums: IAlbum[];
+  @Output() select = new EventEmitter();
+  @Output() delete = new EventEmitter();
 
-  albums: IAlbum[];
-
-  constructor(private albumService: AlbumService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.albumService.getAll().subscribe(albums => {
-      console.log(albums);
-      this.albums = albums as IAlbum[];
-    })
-
   }
 
 }
