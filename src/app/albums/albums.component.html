@@ -1,12 +1,7 @@
 <div class="container">
   <app-albums-list class="col-50" [albums]="albums" (select)="selectAlbum($event)" (delete)="deleteAlbum($event)">>
   </app-albums-list>
-  <!-- <app-albums-list class="col-50" 
-  [albums]="albums" 
-  (selected)="selectAlbum($event)" 
-  (deleted)="deleteAlbum($event)">
-  </app-albums-list> -->
 
-  <!-- <app-item-detail class="col-50" [item]="currentItem" (saved)="saveItem($event)" (cancelled)="cancel($event)">
-  </app-item-detail> -->
+  <app-album-detail class="col-50" [album]="currentAlbum" (save)="saveAlbum($event)" (cancel)="cancel($event)">
+  </app-album-detail>
 </div>

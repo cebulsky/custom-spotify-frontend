@@ -26,7 +26,7 @@ export class AlbumService {
   }
 
   update(album: IAlbum) {
-    return this.http.patch(`${BASE_URL}${album._id}`, JSON.stringify(album), HEADER);
+    return this.http.put(`${BASE_URL}${album._id}`, JSON.stringify(album), HEADER);
   }
 
   delete(album: IAlbum) {

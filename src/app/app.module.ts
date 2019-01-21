@@ -10,18 +10,22 @@ import { AlbumsComponent } from './albums/albums.component';
 import { AlbumsListComponent } from './albums/albums-list/albums-list.component';
 import { AlbumService } from './shared/album.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { AlbumDetailComponent } from './albums/album-detail/album-detail.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AlbumsComponent,
-    AlbumsListComponent
+    AlbumsListComponent,
+    AlbumDetailComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    FormsModule,
     BrowserAnimationsModule,
     AppMaterialModule
   ],

@@ -28,6 +28,30 @@ export class AlbumsComponent implements OnInit {
     this.currentAlbum = album;
   }
 
+  saveAlbum(album: IAlbum) {
+    if (!album._id) {
+      this.createAlbum(album);
+    } else {
+      this.updateAlbum(album);
+    }
+  }
+
+  updateAlbum(album: IAlbum): any {
+    this.albumService.update(album)
+      .subscribe(response => {
+        this.getAlbums();
+        this.resetCurrentAlbum();
+      });
+  }
+
+  createAlbum(album: IAlbum): any {
+    this.albumService.create(album)
+      .subscribe(response => {
+        this.getAlbums();
+        this.resetCurrentAlbum();
+      });
+  }
+
   deleteAlbum(album) {
     this.albumService.delete(album)
       .subscribe(response => {
@@ -38,6 +62,10 @@ export class AlbumsComponent implements OnInit {
 
   resetCurrentAlbum(): any {
     this.currentAlbum = { _id: null, title: '', artist: '', imageUrl: '', description: '' };
+  }
+
+  cancel(album) {
+    this.resetCurrentAlbum();
   }
 
 }
