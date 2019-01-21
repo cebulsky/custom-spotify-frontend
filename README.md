@@ -1,6 +1,8 @@
 # CustomSpotify
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.2.
+To make this project to work, please use repository https://github.com/cebulsky/custom-spotify-backend
+the REST server from custom-spotify-backend repo should be running while testing this app
 
 ## Development server
 
