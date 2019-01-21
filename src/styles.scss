@@ -105,3 +105,11 @@ html {
   mat-card-title h1 {
     display: inline;
   }
+
+  mat-card.mat-card {
+    background-color: black;
+  }
+
+  .mat-form-field-wrapper {
+    margin-top: 10px;
+  }
